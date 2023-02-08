@@ -1,0 +1,186 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information:  ,   , LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+X:\Projects\Keil\Traffic\blinky.uvprojx
+Project File Date:  02/01/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f446xx.s...
+CLOCK.c(31): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+CLOCK.c(60): warning: // comments are not allowed in this language [-Wcomment]
+RCC->CR |=RCC_CR_HSEON; // set CR bit 16 
+                        ^
+2 warnings generated.
+compiling CLOCK.c...
+GPIO.c(32): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+1 warning generated.
+compiling GPIO.c...
+USART.c(31): warning: In file included from...
+./USART.h(49): warning: // comments are not allowed in this language [-Wcomment]
+// USART 2 Configuration
+^
+USART.c(34): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+USART.c(47): warning: variable declaration in for loop is a C99-specific feature [-Wc99-extensions]
+        for(uint8_t i=0;i<size;i++){
+            ^
+USART.c(47): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+USART.c(58): warning: variable declaration in for loop is a C99-specific feature [-Wc99-extensions]
+        for(uint8_t i=0;i<size;i++){
+            ^
+USART.c(58): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+USART.c(76): warning: // comments are not allowed in this language [-Wcomment]
+// Send a string to the UART PORTx
+^
+7 warnings generated.
+compiling USART.c...
+SYS_INIT.c(36): warning: // comments are not allowed in this language [-Wcomment]
+// Systick ISR executes every milli-second
+^
+1 warning generated.
+compiling SYS_INIT.c...
+compiling system_stm32f4xx.c...
+main.c(1): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+main.c(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+uint32_t random(){
+               ^
+                void
+main.c(12): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        return (rand() % (upper - lower + 1)) + lower;
+                ^~~~~~ ~
+main.c(10): warning: no previous prototype for function 'random' [-Wmissing-prototypes]
+uint32_t random(){
+         ^
+main.c(10): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint32_t random(){
+^
+static 
+main.c(17): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        return (rand() % (upper - lower + 1)) + lower;
+                ^~~~~~ ~
+main.c(16): warning: no previous prototype for function 'rrandom' [-Wmissing-prototypes]
+uint32_t rrandom(uint32_t upper, uint32_t lower){
+         ^
+main.c(16): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint32_t rrandom(uint32_t upper, uint32_t lower){
+^
+static 
+main.c(23): warning: no previous prototype for function 'max' [-Wmissing-prototypes]
+uint32_t max(uint32_t a, uint32_t b){
+         ^
+main.c(23): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint32_t max(uint32_t a, uint32_t b){
+^
+static 
+main.c(29): warning: unused parameter 'frame_period' [-Wunused-parameter]
+void noanimate(uint32_t loadL, uint32_t loadR, uint32_t loadU, uint32_t loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, uint32_t GreenLRflag, uint32_t GreenUDflag) {
+                                                                                                                                                                                        ^
+main.c(29): warning: unused parameter 'GreenLRflag' [-Wunused-parameter]
+void noanimate(uint32_t loadL, uint32_t loadR, uint32_t loadU, uint32_t loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, uint32_t GreenLRflag, uint32_t GreenUDflag) {
+                                                                                                                                                                                                               ^
+main.c(29): warning: unused parameter 'GreenUDflag' [-Wunused-parameter]
+void noanimate(uint32_t loadL, uint32_t loadR, uint32_t loadU, uint32_t loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, uint32_t GreenLRflag, uint32_t GreenUDflag) {
+                                                                                                                                                                                                                                     ^
+main.c(29): warning: no previous prototype for function 'noanimate' [-Wmissing-prototypes]
+void noanimate(uint32_t loadL, uint32_t loadR, uint32_t loadU, uint32_t loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, uint32_t GreenLRflag, uint32_t GreenUDflag) {
+     ^
+main.c(29): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void noanimate(uint32_t loadL, uint32_t loadR, uint32_t loadU, uint32_t loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, uint32_t GreenLRflag, uint32_t GreenUDflag) {
+^
+static 
+main.c(80): warning: // comments are not allowed in this language [-Wcomment]
+        // GPIO_InitTypeDef carR[] = {PA7, PA6, PA5};
+        ^
+main.c(81): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carR[] = {PA5, PA6, PA7};
+                                   ^~~
+main.c(88): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carL[] = {PB13, PB14, PB15};
+                                   ^~~~
+main.c(97): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carD[] = {PA9, PA12, PA11};
+                                   ^~~
+main.c(104): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carU[] = {PA10, PB5, PA8};
+                                   ^~~~
+main.c(73): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint32_t frame_period = 1000; /* ANIMATION FRAME TIME */
+                 ^
+main.c(129): warning: unused variable 'loadi' [-Wunused-variable]
+        uint32_t loadi, loadLR, loadUD;
+                 ^
+main.c(142): warning: unused variable 'loadIncWhileGreen' [-Wunused-variable]
+        uint32_t loadIncWhileGreen = 0; /* May be set to random(0,1) */
+                 ^
+19 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=4244 RO-data=844 RW-data=4 ZI-data=1872  
+".\Objects\blinky.axf" - 0 Error(s), 30 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
+                Keil.STM32F4xx_DFP.2.17.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/red/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/red/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F446xx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information:  ,   , LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+X:\Projects\Keil\Animations\blinky.uvprojx
+Project File Date:  02/01/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+GPIO.c(32): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+1 warning generated.
+compiling GPIO.c...
+USART.c(31): warning: In file included from...
+./USART.h(49): warning: // comments are not allowed in this language [-Wcomment]
+// USART 2 Configuration
+^
+USART.c(34): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+USART.c(47): warning: variable declaration in for loop is a C99-specific feature [-Wc99-extensions]
+        for(uint8_t i=0;i<size;i++){
+            ^
+USART.c(47): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+USART.c(58): warning: variable declaration in for loop is a C99-specific feature [-Wc99-extensions]
+        for(uint8_t i=0;i<size;i++){
+            ^
+USART.c(58): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+USART.c(76): warning: // comments are not allowed in this language [-Wcomment]
+// Send a string to the UART PORTx
+^
+7 warnings generated.
+compiling USART.c...
+assembling startup_stm32f446xx.s...
+CLOCK.c(31): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+CLOCK.c(60): warning: // comments are not allowed in this language [-Wcomment]
+RCC->CR |=RCC_CR_HSEON; // set CR bit 16 
+                        ^
+2 warnings generated.
+compiling CLOCK.c...
+SYS_INIT.c(36): warning: // comments are not allowed in this language [-Wcomment]
+// Systick ISR executes every milli-second
+^
+1 warning generated.
+compiling SYS_INIT.c...
+compiling system_stm32f4xx.c...
+main.c(1): warning: In file included from...
+./CLOCK.h(39): warning: // comments are not allowed in this language [-Wcomment]
+#define PLL_P 0 //0 to the sixteenth position (PLL=2)
+                ^
+main.c(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+int random(){
+          ^
+           void
+main.c(10): warning: no previous prototype for function 'random' [-Wmissing-prototypes]
+int random(){
+    ^
+main.c(10): note: declare 'static' if the function is not intended to be used outside of this translation unit
+int random(){
+^
+static 
+main.c(17): warning: no previous prototype for function 'max' [-Wmissing-prototypes]
+int max(int a, int b){
+    ^
+main.c(17): note: declare 'static' if the function is not intended to be used outside of this translation unit
+int max(int a, int b){
+^
+static 
+main.c(29): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        if((loadL <= loadi + 1)) GPIO_WritePin(GPIOB, carL[loadi].Pin, high); /*  CAR LEFT   */
+                                                                 ~~~~~~~~~~~~~        ~~~~~~~~~~~~^~~
+main.c(30): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        if((loadR <= loadi + 1)) GPIO_WritePin(GPIOA, carR[loadi].Pin, high); /*  CAR RIGHT  */
+                                                                 ~~~~~~~~~~~~~        ~~~~~~~~~~~~^~~
+main.c(31): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        if((loadD <= loadi + 1)) GPIO_WritePin(GPIOA, carD[loadi].Pin, high); /*  CAR DOWN     */
+                                                                 ~~~~~~~~~~~~~        ~~~~~~~~~~~~^~~
+main.c(42): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        if((loadL <= loadi + 1) && GreenLRflag == 1) GPIO_WritePin(GPIOB, carL[loadi].Pin, low); /*  CAR LEFT   */
+                                                                                     ~~~~~~~~~~~~~        ~~~~~~~~~~~~^~~
+main.c(43): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        if((loadR <= loadi + 1) && GreenLRflag == 1) GPIO_WritePin(GPIOA, carR[loadi].Pin, low); /*  CAR RIGHT  */
+                                                                                     ~~~~~~~~~~~~~        ~~~~~~~~~~~~^~~
+main.c(44): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        if((loadD <= loadi + 1) && GreenUDflag == 1) GPIO_WritePin(GPIOA, carD[loadi].Pin, low); /*  CAR DOWN     */
+                                                                                     ~~~~~~~~~~~~~        ~~~~~~~~~~~~^~~
+main.c(24): warning: unused parameter 'loadU' [-Wunused-parameter]
+void animate(int loadL, int loadR, int loadU, int loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, int GreenLRflag, int GreenUDflag) {
+                                       ^
+main.c(24): warning: unused parameter 'carU' [-Wunused-parameter]
+void animate(int loadL, int loadR, int loadU, int loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, int GreenLRflag, int GreenUDflag) {
+                                                                                                                           ^
+main.c(24): warning: no previous prototype for function 'animate' [-Wmissing-prototypes]
+void animate(int loadL, int loadR, int loadU, int loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, int GreenLRflag, int GreenUDflag) {
+     ^
+main.c(24): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void animate(int loadL, int loadR, int loadU, int loadD, GPIO_InitTypeDef *carL, GPIO_InitTypeDef *carR, GPIO_InitTypeDef *carU, GPIO_InitTypeDef *carD, uint32_t frame_period, int GreenLRflag, int GreenUDflag) {
+^
+static 
+main.c(71): warning: // comments are not allowed in this language [-Wcomment]
+        // GPIO_InitTypeDef carR[] = {PA7, PA6, PA5};
+        ^
+main.c(72): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carR[] = {PA5, PA6, PA7};
+                                   ^~~
+main.c(80): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carL[] = {PB15, PB14, PB13};
+                                   ^~~~
+main.c(88): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carD[] = {PA9, PA11, PA12};
+                                   ^~~
+main.c(95): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        GPIO_InitTypeDef carU[] = {PC13, PC14, PC15};
+                                   ^~~~
+main.c(119): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        GPIO_WritePin(GPIOC, RedLR.Pin,          low);
+        ~~~~~~~~~~~~~        ~~~~~~^~~
+main.c(120): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        GPIO_WritePin(GPIOC, YellowLR.Pin, low);
+        ~~~~~~~~~~~~~        ~~~~~~~~~^~~
+main.c(121): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        GPIO_WritePin(GPIOC, GreenLR.Pin,  low);
+        ~~~~~~~~~~~~~        ~~~~~~~~^~~
+main.c(123): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        GPIO_WritePin(GPIOA, RedUD.Pin,          low);
+        ~~~~~~~~~~~~~        ~~~~~~^~~
+main.c(124): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        GPIO_WritePin(GPIOA, YellowUD.Pin, low);
+        ~~~~~~~~~~~~~        ~~~~~~~~~^~~
+main.c(125): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        GPIO_WritePin(GPIOA, GreenUD.Pin,  low);
+        ~~~~~~~~~~~~~        ~~~~~~~~^~~
+main.c(147): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOC, GreenLR.Pin,  high);
+                                        ~~~~~~~~~~~~~        ~~~~~~~~^~~
+main.c(148): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOA, GreenUD.Pin,        low );
+                                        ~~~~~~~~~~~~~        ~~~~~~~~^~~
+main.c(150): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOC, RedLR.Pin,    low );
+                                        ~~~~~~~~~~~~~        ~~~~~~^~~
+main.c(151): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOA, RedUD.Pin,          high);
+                                        ~~~~~~~~~~~~~        ~~~~~~^~~
+main.c(165): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOC, GreenLR.Pin,  low);
+                                        ~~~~~~~~~~~~~        ~~~~~~~~^~~
+main.c(166): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOA, GreenUD.Pin,        high );
+                                        ~~~~~~~~~~~~~        ~~~~~~~~^~~
+main.c(168): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOC, RedLR.Pin,    high );
+                                        ~~~~~~~~~~~~~        ~~~~~~^~~
+main.c(169): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                                        GPIO_WritePin(GPIOA, RedUD.Pin,          low);
+                                        ~~~~~~~~~~~~~        ~~~~~~^~~
+main.c(64): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint32_t frame_period = 50; /* ANIMATION FRAME TIME */
+                 ^
+main.c(114): warning: unused variable 'loadi' [-Wunused-variable]
+        int loadi, loadLR, loadUD;
+            ^
+34 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=2900 RO-data=484 RW-data=4 ZI-data=1872  
+".\Objects\blinky.axf" - 0 Error(s), 45 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
+                Keil.STM32F4xx_DFP.2.17.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/red/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/red/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F446xx_OPT.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
